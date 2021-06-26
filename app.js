@@ -13,6 +13,9 @@ const getJoke = async () => {
     return res.data.joke;
   } catch (e) {
     console.log(e);
+    const errorHandle = 'ERROR! Please Check Your Connection And Try Again!';
+    jokeText.style.color = 'Red';
+    return errorHandle;
   }
 };
 

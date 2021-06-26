@@ -132,25 +132,46 @@ table {
 }
 /* ========== LR Styles ========== */
 body {
-  background-color: var(--mainBg);
+  background-image: linear-gradient(to bottom right, #f09819, #edde5d);
   display: flex;
+  width: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
 #logo {
-  width: 3.4rem;
-  height: 3.2rem;
+  width: 17rem;
+  height: 17rem;
   position: absolute;
-  transform: translateY(-300px);
+}
+
+.blurContainer {
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  /* z-index: -1; */
+  border-radius: 2.2rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.blurContainer:before {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  backdrop-filter: blur(7px) saturate(100%) contrast(45%) brightness(130%);
+  content: ' ';
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 /* ===== Main Content ===== */
 .mainContainer {
   width: 80%;
   height: 80vh;
-  background-color: white;
-  margin-top: 4.5rem;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2rem;
   display: grid;
   justify-items: center;
@@ -167,22 +188,30 @@ body {
   width: 100%;
   height: 100;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #c28d06;
+  background-color: #ffd466;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
 
+.theText {
+  font-family: var(--abril);
+  font-size: 1.4rem;
+  transform: translateX(-108px);
+}
+
 h1 {
   font-family: var(--abril);
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 /* ===== Jokes ===== */
 .jokeContainer {
   grid-area: Joke;
   width: 80%;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,6 +225,7 @@ h1 {
 /* ===== Button ===== */
 .buttonContainer {
   grid-area: Button;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,6 +237,7 @@ button {
   border: 2px solid var(--mainBg);
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
   color: var(--mainBg);
   font-family: var(--roboto);
   font-size: 1.1rem;
@@ -220,25 +251,24 @@ button:active {
 /* ========== Media Queries ========== */
 /* ===== Small Phone ===== */
 @media only screen and (min-width: 360px) and (max-width: 410px) {
-  #logo {
-    transform: translateY(-250px);
-  }
+  /* #logo {
+  } */
 }
 
 /* ===== Tablets ===== */
 @media only screen and (min-width: 418px) and (max-width: 1025px) {
   #logo {
-    width: 4.4rem;
-    height: 4.2rem;
-    transform: translateY(-410px);
+    width: 24rem;
+    height: 24rem;
   }
 
-  .mainContainer {
-    margin-top: 6.5rem;
+  .theText {
+    font-size: 2rem;
+    transform: translateX(-160px);
   }
 
   h1 {
-    font-size: 2.3rem;
+    font-size: 3rem;
   }
 
   .jokeText {
@@ -251,17 +281,30 @@ button:active {
     font-size: 1.3rem;
   }
 }
-
+/* ===== Desktop ===== */
 @media only screen and (min-width: 1025px) {
   #logo {
-    width: 3.4rem;
-    height: 3.2rem;
-    transform: translateY(-260px);
+    width: 26rem;
+    height: 26rem;
+  }
+
+  .blurContainer {
+    width: 60%;
   }
 
   .mainContainer {
     width: 60%;
   }
+
+  .theText {
+    font-size: 2rem;
+    transform: translateX(-160px);
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
   button:hover {
     background-color: var(--mainBg);
     color: black;
