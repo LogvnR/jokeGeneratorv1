@@ -223,6 +223,7 @@ h1 {
 
 .jokeText {
   font-family: var(--roboto);
+  color: black;
   font-size: 1.3rem;
 }
 
