@@ -131,6 +131,10 @@ table {
   --secondary: #d7d9db;
 }
 /* ========== LR Styles ========== */
+html {
+  height: 100vh;
+}
+
 body {
   background-image: linear-gradient(to bottom right, #f09819, #edde5d);
   display: flex;
@@ -186,7 +190,7 @@ body {
 .title {
   grid-area: Title;
   width: 100%;
-  height: 100;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
