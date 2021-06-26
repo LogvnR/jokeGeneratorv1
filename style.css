@@ -239,18 +239,18 @@ h1 {
 button {
   width: 8rem;
   height: 2.2rem;
-  border: 2px solid var(--mainBg);
+  border: none;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(to right, #f09819, #edde5d);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
-  color: var(--mainBg);
+  color: black;
   font-family: var(--roboto);
   font-size: 1.1rem;
 }
 
 button:active {
-  background-color: var(--mainBg);
-  color: black;
+  background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+  color: white;
 }
 
 /* ========== Media Queries ========== */
@@ -311,9 +311,8 @@ button:active {
   }
 
   button:hover {
-    background-color: var(--mainBg);
-    color: black;
-    transition: all 0.2s ease-in-out;
+    background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+    color: white;
   }
 
   button:active {
